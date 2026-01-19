@@ -1,9 +1,8 @@
 <script setup lang="ts">
-defineProps<{}>();
 </script>
 
 <template>
-    <nav class="flex flex-row justify-between items-center my-2">
+    <nav class="flex flex-row justify-between items-center my-2 mx-8">
         <!-- title / logo -->
         <h2>Diff tool</h2>
 
