@@ -1,11 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --color-*: initial;
+
+  --text-*: initial;
+  --text-sm: 0.82rem;
+  --text-base: 1rem;
+  --text-xl: 1.333rem;
+  --text-2xl: 1.777rem;
+  --text-3xl: 2.369rem;
+  --text-4xl: 3.158rem;
+  --text-5xl: 4.21rem;
+
+  --color-text: #dcdbe1;
+  --color-background: #131313;
+  --color-primary: #56a7dc;
+  --color-accent: #646cff;
+  --color-accent-hover: #535bf2;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  font-family: "Fira Code";
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--color-text);
+  background-color: var(--color-background);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,13 +33,29 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  font-family: "Fira Code";
+  font-weight: 400;
+}
+
+.font-cascadia {
+  font-family: "Cascadia Code";
+  font-weight: 700;
+}
+
+.font-fira {
+  font-family: "Fira Code";
+  font-weight: 400;
+}
+
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--color-accent);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  transition: color 0.2s;
+  color: var(--color-accent-hover);
 }
 
 body {
@@ -31,8 +67,18 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-family: "Cascadia Code";
+  font-weight: 700;
+
+  @apply text-xl sm:text-3xl;
+}
+
+h2 {
+  @apply text-xl md:text-2xl;
+}
+
+p {
+  @apply text-base;
 }
 
 button {
@@ -63,17 +109,4 @@ button:focus-visible {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
