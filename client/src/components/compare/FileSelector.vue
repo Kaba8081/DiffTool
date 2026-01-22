@@ -5,22 +5,12 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   (e: "update:file", file: File | null): void;
-  (e: "file-content", content: string | ArrayBuffer | null): void;
 }>();
 
 function onFileChange(event: Event) {
   const target = event.target as HTMLInputElement;
   const file = target.files?.[0] ?? null;
   emit("update:file", file);
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = () => {
-      emit("file-content", reader.result);
-    };
-    reader.readAsArrayBuffer(file);
-  } else {
-    emit("file-content", null);
-  }
 }
 </script>
 

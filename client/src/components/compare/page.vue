@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import FileSelector from "./FileSelector.vue";
+import DiffViewer from "./DiffViewer.vue";
 
 const file1 = ref<File | null>(null);
 const file2 = ref<File | null>(null);
@@ -18,6 +19,6 @@ const file2 = ref<File | null>(null);
     </div>
   </div>
   <div class="mt-8">
-    <!-- <DiffViewer :file1Content="file1Content" :file2Content="file2Content" /> -->
+    <DiffViewer :file1="file1" :file2="file2" />
   </div>
 </template>
